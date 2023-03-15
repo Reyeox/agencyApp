@@ -20,6 +20,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from "@angular/forms";
 import { FilterPipe } from "./pipes/filter.pipe";
+import { StoreModule } from '@ngrx/store';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -56,6 +57,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MatListModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     BrowserAnimationsModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]

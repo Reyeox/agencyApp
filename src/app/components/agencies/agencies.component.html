@@ -9,19 +9,21 @@
           </button>
         </mat-form-field>
   </mat-list-item>
-  <mat-list-item *ngFor="let folder of listAgencies | filter : value">
+  <mat-list-item *ngFor="let agency of listAgencies | filter : value">
       <mat-card class="example-card">
           <mat-card-header style="align-items: center;">
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{folder.agencia}}</mat-card-title>
-            <mat-card-subtitle>{{folder.provincia}}
+            <mat-card-title><a [routerLink]="['/details']" routerLinkActive="router-link-active" class="link-agency">{{agency.agencia}}</a></mat-card-title>
+            <mat-card-subtitle>
+              {{agency.provincia}}
               <br>
-              <p class="address">{{folder.direccion}}</p>
+              <p class="address">{{agency.direccion}}</p>
             </mat-card-subtitle>
             <span class="spacer"></span>
             <mat-card-actions align="end">
-              <button mat-button><mat-icon>map</mat-icon></button>
-              
+              <!-- <button mat-button><mat-icon>map</mat-icon></button> -->
+              <button (click)="agency.favorite=!agency.favorite" *ngIf="agency.favorite" mat-button><mat-icon style="color:orange">star</mat-icon></button>
+              <button (click)="agency.favorite=!agency.favorite" *ngIf="!agency.favorite" mat-button><mat-icon>star_border</mat-icon></button>
             </mat-card-actions>
           </mat-card-header>
         </mat-card>

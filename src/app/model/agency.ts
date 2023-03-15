@@ -6,4 +6,5 @@ export interface Agency {
     direccion: string;
     lat: number;
     lon: number;
+    favorite: boolean;
 }
