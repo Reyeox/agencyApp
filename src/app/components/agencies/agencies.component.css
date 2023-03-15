@@ -1,7 +1,4 @@
-.example-card {
-    max-width: 400px;
-  }
-  
+
   .example-header-image {
     background-image: url('src/assets/oficina.png');
     background-size: cover;
@@ -10,6 +7,7 @@
   .mat-card{
     display:flex;
     flex-direction: column;
+    width:100%;
   }
   
   .mat-card-header {
@@ -25,4 +23,8 @@
 
   .example-full-width {
     width: 100%;
+  }
+
+  .address{
+    font-size: 14px !important;
   }
