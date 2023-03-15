@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'agencyApp';
+
+  
+  constructor(private ngxLoader: NgxUiLoaderService){}
+
+
+  searchVisible = false;
+
+  toggleSearch() {
+    this.searchVisible = !this.searchVisible;
+  }
+
+  onSearchVisibleChange(visible: boolean) {
+    this.searchVisible = visible;
+  }
+  ngOnInit(){
+    this.ngxLoader.start();
+
+    setTimeout(() => {
+      this.ngxLoader.stop();
+    }, 200);
+  }
 }

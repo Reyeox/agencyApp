@@ -1,0 +1,28 @@
+
+<mat-list>
+    <mat-list-item *ngIf="searchVisible">
+        <mat-form-field class="example-full-width">
+            <mat-label>Search</mat-label>
+            <input matInput type="text" [(ngModel)]="value">
+            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+    </mat-list-item>
+    <mat-list-item *ngFor="let folder of folders | filter : value">
+        <mat-card class="example-card">
+            <mat-card-header style="align-items: center;">
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{folder.name}}</mat-card-title>
+              <mat-card-subtitle>{{folder.updated}}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+    </mat-list-item>
+    <!-- <mat-divider></mat-divider>
+    <div mat-subheader>Notes</div>
+    <mat-list-item *ngFor="let note of notes">
+      <mat-icon mat-list-icon>note</mat-icon>
+      <div mat-line>{{note.name}}</div>
+      <div mat-line> {{note.updated | date}} </div>
+    </mat-list-item> -->
+  </mat-list>

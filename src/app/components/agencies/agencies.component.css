@@ -1,0 +1,28 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('src/assets/oficina.png');
+    background-size: cover;
+  }
+
+  .mat-card{
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .mat-card-header {
+    flex-shrink: 0;
+  }
+  
+  .mat-card-content{
+    flex-grow: 1;
+    overflow: auto;
+  }
+
+
+
+  .example-full-width {
+    width: 100%;
+  }
